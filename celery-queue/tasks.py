@@ -35,10 +35,14 @@ def factors(n: int) -> list:
     
     factor_list = []
     prime = 1
-    while (next_prime(prime) <= n):
-        while n % next_prime(prime) == 0:
-            n = n / next_prime(prime)
-            factor_list.append(next_prime(prime))
-        prime = next_prime(prime)
+    next_p = next_prime(prime)
+
+    while (next_p <= n):
+        while n % next_p == 0:
+            n = n / next_p
+            factor_list.append(next_p)
+        prime = next_p
+        next_p = next_prime(prime)
+
     return factor_list
 
