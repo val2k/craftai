@@ -1,7 +1,8 @@
 Dockerized Asynchronous REST API w/ Traefik, Flask, Celery (Redis)
 ================================================================== 
 
-![diagram architecture](https://raw.githubusercontent.com/val2k/craftai/master/diagram.png)
+.. image:: diagram.png
+
 
 Usage
 ------
