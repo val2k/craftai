@@ -1,0 +1,46 @@
+version: '2'
+services:
+  web:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+     - "5001:5001"
+    depends_on:
+      - redis
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=flask"
+      - "traefik.frontend.rule=Host:host.localhost.com"
+  traefik:
+    image: traefik
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik/traefik.toml:/etc/traefik/traefik.toml:ro
+      - ./traefik/acme:/etc/traefik/acme
+      - ./traefik/logs:/etc/traefik/logs
+    ports:
+     - "80:80"
+     - "443:443"
+     - "8080:8080"
+    depends_on:
+      - redis
+  worker:
+    build:
+      context: celery-queue
+      dockerfile: Dockerfile
+    depends_on:
+      - redis
+  monitor:
+    build:
+      context: celery-queue
+      dockerfile: Dockerfile
+    ports:
+     - "5555:5555"
+    entrypoint: flower
+    command:  -A tasks --port=5555 --broker=redis://redis:6379/0
+    depends_on:
+      - redis
+  redis:
+    image: redis
