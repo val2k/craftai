@@ -1,8 +1,11 @@
-Dockerized REST API w/ Traefik, Flask, Celery (Redis)
+Dockerized Asynchronous REST API w/ Traefik, Flask, Celery (Redis)
 ===================================================== 
 
 Usage
 ====
+* `docker-compose build`
+* `docker-compose up`
+* `curl -H Host:host.example.com http://localhost:80/factors/24`
 
 URLs
 ====
@@ -12,4 +15,9 @@ URLs
 
 Requirements
 ====
+* docker
+* docker-compose
+
+Tested with:
+
  
