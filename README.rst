@@ -3,18 +3,11 @@ Dockerized Asynchronous REST API w/ Traefik, Flask, Celery (Redis)
 
 Usage
 ====
-
-* Up & Running
-
 `docker-compose build`
-
 `docker-compose up`
-
 `curl -H Host:host.example.com http://localhost:80/factors/24`
-
-* Scale Flask API: 
-
 `docker-compose scale web=x`
+
 
 New backends are now shown on http://localhost:8080/dashboard
 
@@ -33,6 +26,7 @@ Tested with:
 
 * Docker
 
+
 ``` 
 Client:
  Version:      17.06.0-ce
@@ -41,7 +35,6 @@ Client:
  Git commit:   02c1d87
  Built:        Fri Jun 23 21:20:04 2017
  OS/Arch:      linux/amd64
-
 Server:
  Version:      17.06.0-ce
  API version:  1.30 (minimum version 1.12)
@@ -52,7 +45,9 @@ Server:
  Experimental: false
 ```
 
+
 * Docker-compose
+
 
 ```
 docker-compose version 1.22.0, build f46880fe
