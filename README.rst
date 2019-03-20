@@ -17,7 +17,7 @@ docker-compose up
 Use REST API
 
 ```
-curl -H Host:host.example.com http://localhost:80/factors/24
+curl -H Host:host.localhost.com http://localhost:80/factors/24
 ```
 
 Scale web nodes
