@@ -1,54 +1,67 @@
 Dockerized Asynchronous REST API w/ Traefik, Flask, Celery (Redis)
 ================================================================== 
 
+Usage
+------
 
-## Usage
+Up & Running
 
-`docker-compose build`
-`docker-compose up`
-`curl -H Host:host.example.com http://localhost:80/factors/24`
-`docker-compose scale web=x`
+```
+docker-compose build
+docker-compose up
+```
 
+Use REST API
 
-New backends are now shown on http://localhost:8080/dashboard
+```
+curl -H Host:host.example.com http://localhost:80/factors/24
+```
 
-## URLs
+Scale web nodes
+
+```
+docker-compose scale web=x ; New backends are now shown on http://localhost:8080/dashboard
+```
+
+Scale worker nodes
+
+```
+docker-compose scale worker=x ; New backends are now shown on http://localhost:5555
+```
+
+URLs
+-----
 
 *	API Endpoint: http://localhost:80/factors/<int>
 *	Traefik dashboard: http://localhost:8080
 * Monitoring Task queue: http://localhost:5555
 
-## Requirements
+Requirements
+-------------
 
 * docker
 * docker-compose
 
-Tested with:
-
-* Docker
-
+**Tested with:**
 
 ``` 
+Docker
 Client:
- Version:      17.06.0-ce
- API version:  1.30
- Go version:   go1.8.3
- Git commit:   02c1d87
- Built:        Fri Jun 23 21:20:04 2017
- OS/Arch:      linux/amd64
+Version:      17.06.0-ce
+API version:  1.30
+Go version:   go1.8.3
+Git commit:   02c1d87
+Built:        Fri Jun 23 21:20:04 2017
+OS/Arch:      linux/amd64
 Server:
- Version:      17.06.0-ce
- API version:  1.30 (minimum version 1.12)
- Go version:   go1.8.3
- Git commit:   02c1d87
- Built:        Fri Jun 23 21:18:59 2017
- OS/Arch:      linux/amd64
- Experimental: false
+Version:      17.06.0-ce
+API version:  1.30 (minimum version 1.12)
+Go version:   go1.8.3
+Git commit:   02c1d87
+Built:        Fri Jun 23 21:18:59 2017
+OS/Arch:      linux/amd64
+Experimental: false
 ```
-
-
-* Docker-compose
-
 
 ```
 docker-compose version 1.22.0, build f46880fe
