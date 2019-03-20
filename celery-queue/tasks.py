@@ -36,7 +36,7 @@ def factors(n: int) -> list:
     factor_list = []
     prime = 1
     while (next_prime(prime) <= n):
-        while n % nextPrime(prime) == 0:
+        while n % next_prime(prime) == 0:
             n = n / next_prime(prime)
             factor_list.append(next_prime(prime))
         prime = next_prime(prime)
