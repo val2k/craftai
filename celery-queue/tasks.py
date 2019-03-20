@@ -10,7 +10,7 @@ celery = Celery('tasks', broker=CELERY_BROKER_URL, backend=CELERY_RESULT_BACKEND
 
 
 @celery.task(name='tasks.factors')
-def factors(x: int) -> list:
+def factors(n: int) -> list:
     factor_list = []
     prime = 1
     while (next_prime(prime) <= n):
