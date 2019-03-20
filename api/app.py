@@ -6,8 +6,8 @@ import celery.states as states
 app = Flask(__name__)
 
 @app.route('/factors/<int:param1>')
-def add(param1: int) -> str:
-    task = celery.send_task('tasks.add', args=[param1], kwargs={})
+def factors(param1: int) -> str:
+    task = celery.send_task('tasks.factors', args=[param1], kwargs={})
     response = f"<a href='{url_for('check_task', task_id=task.id, external=True)}'>check status of {task.id} </a>"
     return response
 
