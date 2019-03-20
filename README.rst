@@ -1,3 +1,2 @@
-Dockerized REST API w/ Flask, Celery (Redis)
-============================================
-
+Dockerized REST API w/ Traefik, Flask, Celery (Redis)
+===================================================== 
