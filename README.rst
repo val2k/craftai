@@ -23,9 +23,7 @@ curl -H Host:host.localhost.com http://localhost:80/factors/24
 Scale web nodes
 
 ```
-docker-compose scale web=x ; New backends are now shown on http://localhost:8080/dashboard
-```
-
+docker-compose scale web=x ; New backends are now shown on http://localhost:8080/
 Scale worker nodes
 
 ```
