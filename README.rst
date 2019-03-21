@@ -24,6 +24,8 @@ Scale web nodes
 
 ```
 docker-compose scale web=x ; New backends are now shown on http://localhost:8080/
+```
+
 Scale worker nodes
 
 ```
